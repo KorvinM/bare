@@ -9,11 +9,11 @@ const port = 3000
 //custom modules
 const wiki = require ('./wiki-route.js');
 
-/* Templating*/
+/* setup Views/templating*/
 
 //set views directory
 app.set('views', path.join(__dirname, 'views'));
-//set the engine to pug
+//set template engine to pug
 app.set('view engine', 'pug');
 
 /* Route Handlers: callback functions on any HTTP verb, (get, post, etc..)
