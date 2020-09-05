@@ -1,0 +1,8 @@
+extends template.pug
+
+block content
+  h1 #{title}
+  p.lead #{content} 
+  block wikicontent
+    nav
+      a(href='wiki/about') About this wiki

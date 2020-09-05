@@ -1,0 +1,68 @@
+html{
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.37;
+  background: url('../img/orientexpress_restaurantcar.jpg') no-repeat center center fixed;
+  background-size: cover;}
+
+body{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+  margin: 0.38rem;}
+
+h1, h2, h3{
+  font-family: 'Merriweather', serif;
+  font-weight: 900;
+  color: whitesmoke;}
+h1{
+  font-size: 2.6em;
+  line-height: 1.05em;
+  margin-top: 0.52em;
+  margin-bottom: 1.05em;}
+h2{
+  font-size: 1.87em;
+  line-height: 1.47em;
+  margin-top: 0.73em;
+  margin-bottom: 0.73em;}
+
+nav{
+  justify-content: space-evenly;
+  line-height: 1em;}
+a{
+  color: #f0f53f;}
+a:hover{
+  color: lightsteelblue;}
+
+.block{
+  padding: 1em;
+  border: 1px groove gold;
+  text-align: center;}
+
+.flx{
+  display: flex;}
+
+.contain{
+  margin: 1em auto 0;
+  padding-bottom: 1.4em;
+  background-color: rgba(170, 16, 31, 0.62);
+  border-radius: 25%;}
+
+ p{
+  color: white;}
+
+.lead{
+  font-size: 1.37em;
+}
+
+.site-footer{
+  position: fixed;
+  bottom: 1px;
+  background-color: rgba(170, 16, 31, 0.88);
+  border-left: none;
+  border-right: none;
+  transform: translateX(-0.38em);
+  width: 100%;}
+
+@media(min-width: 33em){
+  .contain{width: 62%;}
+}
