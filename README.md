@@ -7,7 +7,7 @@ This project represents a learning project to construct a basic Express applicat
 The app sets up templating using Pug, routing, static public files, and runs a local development server.
 
 ### Usage
-To install, clone the repo and run `npm init`
+To install, clone the repo and run `npm install`
 To start, run `npm start`.
 
 ###ToDo
