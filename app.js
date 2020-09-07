@@ -60,5 +60,5 @@ app.use((error, req, res, next) => {
 
 /* local server */
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Bare listening at http://localhost:${port}`)
 })
