@@ -29,12 +29,14 @@ nav{
   justify-content: space-evenly;
   line-height: 1em;}
 a{
-  color: #f0f53f;}
+  text-decoration: none;
+  color: #f0f53f;
+  transition: all 0.25s;}
 a:hover{
-  color: lightsteelblue;}
+  text-shadow: 1px 1px 1px #ddd;}
 
 .block{
-  padding: 1em;
+  padding: 1em 0.62em;
   border: 1px groove gold;
   text-align: center;}
 
@@ -42,8 +44,9 @@ a:hover{
   display: flex;}
 
 .contain{
+  width: 100%;
   margin: 1em auto 0;
-  padding-bottom: 1.4em;
+  padding-bottom: 1.6em;
   background-color: rgba(170, 16, 31, 0.62);
   border-radius: 25%;}
 
@@ -56,7 +59,7 @@ a:hover{
 
 .site-footer{
   position: fixed;
-  bottom: 1px;
+  bottom: 0;
   background-color: rgba(170, 16, 31, 0.88);
   border-left: none;
   border-right: none;

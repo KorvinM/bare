@@ -8,6 +8,7 @@ const port = 3000
 
 //custom modules
 const wiki = require ('./wiki-route.js');
+const blogs = require ('./blogs-route.js');
 
 /*Static files: use the express.static middleware, the only middleware function that is actually part of Express*/
 app.use(express.static ('public'))
@@ -27,6 +28,11 @@ app.get('/', (req, res) => {
   {title : 'Welcome',
    content: 'This is boilerplate Express, using Pug templating'})
 })
+app.get('/credits', (req, res) => {
+  res.render('credits',
+  {title : 'Credits & Acknowledgements',
+   content: 'This project is based on work by other hands.'})
+})
 // simple template-free route handler: calls send() on the response & returns the string "Hello World!"
 // other response methods for ending the request/response cycle exist
 // eg: res.json() res.sendFile()
@@ -35,6 +41,7 @@ app.get('/hello', (req, res) => {
 })
 // we can also group related routes as a module, which we require above and use here
 app.use('/wiki', wiki);
+app.use('/blogs', blogs);
 // for 404 errors, we should place them as the last route in the stack here. This would catch any routes, as well as catching requests for static resources, if not defined earlier in the file.
 app.use(function (req,res,next){
   res.status(404).render('index',
