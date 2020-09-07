@@ -10,9 +10,6 @@ The app sets up templating using Pug, routing, static public files, and runs a l
 To install, clone the repo and run `npm install`
 To start, run `npm start`.
 
-###ToDo
-Add error handling.
-
 The following resources served as tutorials and inspiration:
 [MDN's node.js/express overview](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs) 
 [Expressjs documentation](https://expressjs.com/en/starter/installing.html)
