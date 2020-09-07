@@ -9,6 +9,9 @@ const port = 3000
 //custom modules
 const wiki = require ('./wiki-route.js');
 
+/*Static files: use the express.static middleware, the only middleware function that is actually part of Express*/
+app.use(express.static ('public'))
+
 /* setup Views/templating*/
 
 //set views directory
@@ -32,10 +35,21 @@ app.get('/hello', (req, res) => {
 })
 // we can also group related routes as a module, which we require above and use here
 app.use('/wiki', wiki);
-
-/*Static files: use the express.static middleware, the only middleware function that is actually part of Express*/
-
-app.use(express.static ('public'))
+// for 404 errors, we should place them as the last route in the stack here. This would catch any routes, as well as catching requests for static resources, if not defined earlier in the file.
+app.use(function (req,res,next){
+  res.status(404).render('index',
+  {title: '404: Not Found',
+   content: 'The resource you requested has not been found. Either it has been removed, or never existed.'})
+})
+// catch-all error handler
+app.use((error, req, res, next) => {
+    res.status(error.status).send({
+      error: {
+        status: error.status,
+        message: error.message
+      },
+    });
+  });
 
 /* local server */
 app.listen(port, () => {
