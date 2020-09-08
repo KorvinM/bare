@@ -3,6 +3,7 @@ html{
   font-size: 1rem;
   line-height: 1.37;
   background: url('../img/orientexpress_restaurantcar.jpg') no-repeat center center fixed;
+  background-color: rgb(170,16,31);
   background-size: cover;}
 
 body{
