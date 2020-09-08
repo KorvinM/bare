@@ -1,10 +1,21 @@
 /*Bare bones Express*/
 
-// standard variables for setting up express
+// require express
 const express= require ('express')
-const app = express()
+
+//variables for production
+var compression = require('compression');
+var helmet = require('helmet');
+
+// variables for development
 const path = require('path')
 const port = 3000
+
+// create the express app object
+const app = express()
+
+// use helmet to add a subset of available http headers
+app.use(helmet());
 
 //custom modules
 const wiki = require ('./wiki-route.js');
@@ -22,6 +33,8 @@ app.set('view engine', 'pug');
 
 /* Route Handlers: callback functions on any HTTP verb, (get, post, etc..)
  * parameters: request and response objects (as supplied by node.js)*/
+
+app.use(compression()); //Compress all routes before they are defined
 
 app.get('/', (req, res) => {
   res.render('index',
