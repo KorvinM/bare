@@ -4,8 +4,8 @@
 const express= require ('express')
 
 //variables for production
-var compression = require('compression');
-var helmet = require('helmet');
+const compression = require('compression');
+const helmet = require('helmet');
 
 // variables for development
 const path = require('path')
@@ -14,12 +14,12 @@ const port = 3000
 // create the express app object
 const app = express()
 
-// use helmet to add a subset of available http headers
-app.use(helmet());
-
-//custom modules
+// load custom modules
 const wiki = require ('./wiki-route.js');
 const blogs = require ('./blogs-route.js');
+
+// use helmet to add a subset of available http headers
+app.use(helmet());
 
 /*Static files: use the express.static middleware, the only middleware function that is actually part of Express*/
 app.use(express.static ('public'))
