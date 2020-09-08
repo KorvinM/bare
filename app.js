@@ -6,7 +6,7 @@ const express= require ('express')
 //variables for production
 const compression = require('compression');
 const helmet = require('helmet');
-
+const cacheTime = 86400000 * 30
 // variables for development
 const path = require('path')
 const port = 5000
@@ -22,7 +22,7 @@ const blogs = require ('./blogs-route.js');
 app.use(helmet());
 
 /*Static files: use the express.static middleware, the only middleware function that is actually part of Express*/
-app.use(express.static ('public'))
+app.use(express.static ('public', {maxAge: cacheTime}))
 
 /* setup Views/templating*/
 
