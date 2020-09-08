@@ -1,15 +1,17 @@
-/*Bare bones Express*/
+/* Bare bones Express*/
 
 // require express
 const express= require ('express')
+
+// require path
+const path = require('path')
 
 //variables for production
 const compression = require('compression');
 const helmet = require('helmet');
 const cacheTime = 86400000 * 30
 // variables for development
-const path = require('path')
-const port = 5000
+const port = 3000
 
 // create the express app object
 const app = express()
@@ -21,10 +23,11 @@ const blogs = require ('./blogs-route.js');
 // use helmet to add a subset of available http headers
 app.use(helmet());
 
-/*Static files: use the express.static middleware, the only middleware function that is actually part of Express*/
-app.use(express.static ('public', {maxAge: cacheTime}))
+/* Static files: use the express.static middleware, the only default middleware function included in Express*/
+app.use(express.static ('public', {
+  maxAge: cacheTime}))
 
-/* setup Views/templating*/
+/* setup views & templating*/
 
 //set views directory
 app.set('views', path.join(__dirname, 'views'));
@@ -71,7 +74,7 @@ app.use((error, req, res, next) => {
     });
   });
 
-/* local server */
+/* server */
 app.listen(process.env.PORT || port, () => {
-  console.log(`Bare listening at http://localhost:${port}`)
+  console.log(`Bare listening at port:${port}`)
 })
