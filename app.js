@@ -72,6 +72,6 @@ app.use((error, req, res, next) => {
   });
 
 /* local server */
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log(`Bare listening at http://localhost:${port}`)
 })
