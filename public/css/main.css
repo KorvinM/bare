@@ -7,6 +7,7 @@ html{
   background-size: cover;}
 
 body{
+  color: white;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1em;
   margin: 0.38rem;}
@@ -50,9 +51,6 @@ a:hover{
   padding-bottom: 1.6em;
   background-color: rgba(170, 16, 31, 0.62);
   border-radius: 25%;}
-
- p{
-  color: white;}
 
 .lead{
   font-size: 1.37em;

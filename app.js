@@ -76,5 +76,7 @@ app.use((error, req, res, next) => {
 
 /* server */
 app.listen(process.env.PORT || port, () => {
-  console.log(`Bare listening at port:${port}`)
+  //console.log(`Bare listening at port:${port}`)
+  //the above line gives a misleading log in production
+  console.log(`Bare listening`)
 })
