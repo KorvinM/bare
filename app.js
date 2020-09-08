@@ -9,7 +9,7 @@ const helmet = require('helmet');
 
 // variables for development
 const path = require('path')
-const port = 3000
+const port = 5000
 
 // create the express app object
 const app = express()
