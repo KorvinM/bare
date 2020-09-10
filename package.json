@@ -17,8 +17,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": " node app.js",
-    "devstart": " nodemon app.js",
+    "start": " node start.js",
+    "devstart": " nodemon start.js",
     "debugstart": "DEBUG=bare:* npm start"
   },
   "author": "Korvin M (http://korvin.org)",
